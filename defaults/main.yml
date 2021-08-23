@@ -1,0 +1,19 @@
+---
+pdnsadmin_loglevel: WARN
+pdnsadmin_logfile: pdnsadmin.log
+
+pdnsadmin_pdns_url: "https://pdns.example.net/api/v1"
+pdnsadmin_pdns_apikey: pdnsadpikey
+
+pdnsadmin_db_type: postgresql
+pdnsadmin_db_user: pdnsadmin
+pdnsadmin_db_passwd: securepsqlpass
+pdnsadmin_db_host: 10.11.12.13
+pdnsadmin_db_port: 5432
+pdnsadmin_db_name: pdnsadmin
+
+pdnsadmin_web_port: 8080
+pdnsadmin_web_admin_pass: securepass
+pdnsadmin_web_admin_firstname: john
+pdnsadmin_web_admin_lastname: doe
+pdnsadmin_web_admin_email: john.doe@exemple.fr

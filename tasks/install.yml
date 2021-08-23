@@ -1,0 +1,35 @@
+---
+- name: "Launch pdnsadmin container"
+  docker_container:
+    name: powerdns_admin
+    image: monogramm/docker-powerdns-admin:master
+    state: started
+    ports:
+      - "{{ pdnsadmin_web_port }}:80"
+    env:
+      PDA_DB_TYPE="{{ pdnsadmin_db_type }}"
+      PDA_DB_USER="{{ pdnsadmin_db_user }}"
+      PDA_DB_PASSWORD="{{ pdnsadmin_db_passwd }}"
+      PDA_DB_HOST="{{ pdnsadmin_db_host }}"
+      PDA_DB_PORT="{{ pdnsadmin_db_port }}"
+      PDA_DB_NAME="{{ pdnsadmin_db_name }}"
+      SQLALCHEMY_TRACK_MODIFICATIONS=True
+      GUNICORN_TIMEOUT=120
+      GUNICORN_WORKERS=2
+      GUNICORN_LOGLEVEL=info
+      BIND_ADDRESS=0.0.0.0
+      PORT=80
+      PDNS_API_URL="{{ pdnsadmin_pdns_url }}"
+      PDNS_API_KEY="{{ pdnsadmin_pdns_apikey }}"
+      PDNS_VERSION=4.4.0
+      SECRET_KEY=otDoapEafNurWiectEymluarpEapmiff5othjugAcKilmOvWawfiaHivKit3
+      TIMEOUT=5
+      LOG_LEVEL="{{ pdnsadmin_loglevel }}"
+      LOG_FILE="{{ pdnsadmin_logfile }}"
+      SALT=EbdythurHahegCynweOfviphorwyighOiwomwefudsurnOfUmacdi8Slaxwi
+      ADMIN_USERNAME=admin
+      ADMIN_PASSWORD="{{ pdnsadmin_web_admin_pass }}"
+      ADMIN_FIRSTNAME="{{ pdnsadmin_web_admin_firstname }}"
+      ADMIN_LASTNAME="{{ pdnsadmin_web_admin_lastname }}"
+      ADMIN_EMAIL="{{ pdnsadmin_web_admin_email }}"
+      AUTO_PTR=ON

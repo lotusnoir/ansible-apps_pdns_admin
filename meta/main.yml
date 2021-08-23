@@ -1,0 +1,24 @@
+---
+galaxy_info:
+  author: "Philippe leal"
+  description: "Install and configure powerdns web administration tool"
+  role_name: apps_pdns_admin
+  license: "license: Apache License, Version 2.0"
+  min_ansible_version: 2.8
+
+  platforms:
+    - name: "Ubuntu"
+      versions:
+        - "focal"
+        - "bionic"
+    - name: "Debian"
+      versions:
+        - "buster"
+        - "stretch"
+
+  galaxy_tags:
+    - pdns
+    - administration
+    - web
+
+dependencies: []

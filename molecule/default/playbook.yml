@@ -1,0 +1,9 @@
+---
+- name: Run role
+  hosts: all
+  become: true
+
+  roles:
+    - role: geerlingguy.docker
+    - role: geerlingguy.pip
+    - role: apps_pdns_admin
